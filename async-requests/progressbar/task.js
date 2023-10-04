@@ -8,7 +8,7 @@ send.addEventListener('click', showProgress);
 function showProgress(event) {
 	event.preventDefault();
 	xhr.open('POST', 'https://students.netoservices.ru/nestjs-backend/upload');
-	xhr.onprogress = function (event) {
+	xhr.upload.onprogress = function (event) {
 
 		progress.value = event.loaded / 100;
 	}
