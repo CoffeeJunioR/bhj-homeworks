@@ -1,9 +1,6 @@
 const text = localStorage.getItem('text');
 let textarea = document.getElementById('editor');
-console.log(localStorage.getItem('text'))
-if (text) {
-    textarea.value = text;
-}
+textarea.value = text;
 function setLocalStorage(key, content) {
     localStorage.setItem(key, content)
 }
@@ -11,9 +8,8 @@ function setLocalStorage(key, content) {
 
 
 
-textarea.addEventListener('change', () => {
+textarea.addEventListener('input', () => {
     if (textarea.value != '') {
-        localStorage.clear();
         setLocalStorage('text', textarea.value)
     }
 }) 
