@@ -3,10 +3,6 @@ signin.classList.add("signin_active");
 
 let signinForm = signin.querySelector("#signin__form");
 
-function clearForm() {
-	signinForm.querySelector(`[name="login"]`).value = "";
-	signinForm.querySelector(`[name="password"]`).value = "";
-}
 
 function signIN(e) {
 	e.preventDefault();
@@ -37,19 +33,14 @@ function showWelcome() {
 	if (userID) {
 		welcomeWindow.querySelector("#user_id").textContent = userID;
 		welcomeWindow.classList.add("welcome_active");
-		signinForm.querySelector(`[name="login"]`).style.display = "none";
-		signinForm.querySelector(`[name="password"]`).style.display = "none";
-		signinForm.querySelector("#signin__btn").style.display = "none";
-		signinForm.querySelector("#signout__btn").style.display = "block";
+		signinForm.style = 'display: none;';
+		document.querySelector('.title').style = 'display: none';
 	} else {
-		signinForm.querySelector(`[name="login"]`).style.display = "block";
-		signinForm.querySelector(`[name="password"]`).style.display = "block";
-		signinForm.querySelector("#signout__btn").style.display = "none";
-		signinForm.querySelector("#signin__btn").style.display = "block";
+		document.querySelector('.card').style = 'display: block;';
 		welcomeWindow.querySelector("#user_id").textContent = "";
 		welcomeWindow.classList.remove("welcome_active");
 	}
-	clearForm();
+	signinForm.reset();
 };
 
 signinForm
