@@ -36,7 +36,6 @@ function showWelcome() {
 		signinForm.style = 'display: none;';
 		document.querySelector('.title').style = 'display: none';
 	} else {
-		document.querySelector('.card').style = 'display: block;';
 		welcomeWindow.querySelector("#user_id").textContent = "";
 		welcomeWindow.classList.remove("welcome_active");
 	}
